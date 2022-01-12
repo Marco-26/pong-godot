@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://hud.gd" type="Script" id=1]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="player_score" type="Label" parent="."]
+margin_left = 80.0
+margin_right = 120.0
+margin_bottom = 42.0
+text = "0"
+align = 1
+valign = 1
+
+[node name="enemy_score" type="Label" parent="."]
+margin_left = 904.0
+margin_right = 944.0
+margin_bottom = 42.0
+text = "0"
+align = 1
+valign = 1
