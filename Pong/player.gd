@@ -5,9 +5,10 @@ var speed = 5
 func _ready():
 	self.position.y = get_viewport_rect().size.y/2
 	self.position.x = 30
+	
 
-func _physics_process(delta):
-	_aply_movement()	
+func _physics_process(delta):	
+	_aply_movement()
 
 func _aply_movement():
 	var direction = Vector2.ZERO

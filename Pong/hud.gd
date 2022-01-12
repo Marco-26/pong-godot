@@ -3,12 +3,12 @@ extends Control
 onready var player_label = $player_score
 onready var enemy_label = $enemy_score
 
-var player_score = 0
-var enemy_score = 0
-
 var level_node = null
 
 func _ready():
+	enemy_label.text = str(Globals.enemy_score)
+	player_label.text = str(Globals.player_score)
+	
 	level_node = get_parent()
 	level_node.connect("change_score",self,"_handle_score")
 	
