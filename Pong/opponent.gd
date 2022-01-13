@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed = 4.5
+var speed = 4.9
 var direction = Vector2.ZERO
 
 var ball = null

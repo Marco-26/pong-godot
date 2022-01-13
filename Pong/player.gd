@@ -1,14 +1,20 @@
 extends KinematicBody2D
 
 var speed = 5
+var ball = null
+var width
+var height
 
 func _ready():
-	self.position.y = get_viewport_rect().size.y/2
+	height = get_viewport_rect().size.y
+	width = get_viewport_rect().size.x
+	ball = get_parent().find_node('Ball')
+	self.position.y = height/2
 	self.position.x = 30
-	
 
-func _physics_process(delta):	
-	_aply_movement()
+func _physics_process(delta):
+	if ball.position.x < width/2:
+		_aply_movement()
 
 func _aply_movement():
 	var direction = Vector2.ZERO

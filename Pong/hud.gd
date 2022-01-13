@@ -2,10 +2,12 @@ extends Control
 
 onready var player_label = $player_score
 onready var enemy_label = $enemy_score
+onready var middle_line = $MiddleLine
 
 var level_node = null
 
 func _ready():
+	middle_line.position.x = get_viewport_rect().size.x / 2
 	enemy_label.text = str(Globals.enemy_score)
 	player_label.text = str(Globals.player_score)
 	

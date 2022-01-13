@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var direction = Vector2.ZERO
-var speed = 5
+var speed = 6.5
 
 func _ready():
 	self.position = get_viewport_rect().size/2
