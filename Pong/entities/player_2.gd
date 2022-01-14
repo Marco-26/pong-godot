@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed = 5
+var speed = 8
 var ball = null
 var width
 var height
@@ -18,9 +18,9 @@ func _physics_process(delta):
 
 func _aply_movement():
 	var direction = Vector2.ZERO
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("up"):
 		direction.y -= 1
-	elif Input.is_action_pressed("ui_down"):
+	elif Input.is_action_pressed("down"):
 		direction.y += 1
 	move_and_collide(direction * speed)
 	
