@@ -24,12 +24,20 @@ func _handle_ball_collisions(wall_collided):
 	match wall:
 		0:
 			score_goes_to = score_options.opponent
+			Globals.enemy_score+=1
 			continue
 		1:
 			score_goes_to = score_options.player
+			Globals.player_score+=1
 			continue
+	_check_score()
 	emit_signal("change_score", score_goes_to)
 	get_tree().reload_current_scene()
+
+func _check_score():
+#	Quando chegar a 5, acabar o jogo
+	print("Enemy: ",Globals.enemy_score)
+	print("Player: ",Globals.player_score)
 
 func _on_RoundDelay_timeout():
 	get_tree().paused = false

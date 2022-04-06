@@ -19,10 +19,8 @@ func _handle_score(score_goes_to):
 	
 	match score_target:
 		0:
-			Globals.enemy_score += 1
 			enemy_label.text = str(Globals.enemy_score)
 			continue
 		1:
-			Globals.player_score += 1
 			player_label.text = str(Globals.player_score)
 			continue
