@@ -3,6 +3,8 @@ extends Control
 onready var player_label = $player_score
 onready var enemy_label = $enemy_score
 onready var middle_line = $MiddleLine
+onready var player_win = $player_win
+onready var enemy_win = $enemy_win
 
 var level_node = null
 
@@ -13,6 +15,8 @@ func _ready():
 	
 	level_node = get_parent()
 	level_node.connect("change_score",self,"_handle_score")
+	level_node.connect("winner_signal",self,"_handle_winner")
+	
 	
 func _handle_score(score_goes_to):
 	var score_target = score_goes_to
@@ -24,3 +28,9 @@ func _handle_score(score_goes_to):
 		1:
 			player_label.text = str(Globals.player_score)
 			continue
+
+func _handle_winner(winner):
+	if winner == "Player":
+		player_win.text = winner + "wins"
+	elif winner == "Enemy":
+		enemy_win.text = winner + " wins"

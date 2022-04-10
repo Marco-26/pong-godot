@@ -18,6 +18,9 @@ margin_bottom = 42.0
 text = "0"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="enemy_score" type="Label" parent="."]
 margin_left = 904.0
@@ -26,11 +29,38 @@ margin_bottom = 42.0
 text = "0"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MiddleLine" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.196078 )
-position = Vector2( 489, -28 )
+position = Vector2( 510, 0 )
 texture = ExtResource( 2 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 2, 700 )
+
+[node name="enemy_win" type="Label" parent="."]
+margin_left = 525.0
+margin_top = 8.0
+margin_right = 607.0
+margin_bottom = 22.0
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="player_win" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -100.0
+margin_top = 8.0
+margin_right = -15.0
+margin_bottom = 22.0
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

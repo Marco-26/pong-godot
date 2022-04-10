@@ -2,6 +2,7 @@ extends Node2D
 
 var world_borders = null
 
+signal winner_signal
 signal change_score
 
 enum score_options {opponent, player}
@@ -32,12 +33,19 @@ func _handle_ball_collisions(wall_collided):
 			continue
 	_check_score()
 	emit_signal("change_score", score_goes_to)
+	yield(get_tree().create_timer(2), "timeout")
 	get_tree().reload_current_scene()
 
 func _check_score():
-#	Quando chegar a 5, acabar o jogo
-	print("Enemy: ",Globals.enemy_score)
-	print("Player: ",Globals.player_score)
+	var winner
+	# fazer sinal com o parametro de quem ganha o jogo para o hud atualizar a label winner
+	var finish = 1
+	if(Globals.enemy_score >= finish):
+		winner = "Enemy"
+	elif(Globals.player_score >= finish):
+		winner = "Player"
+	
+	emit_signal("winner_signal", winner)
 
 func _on_RoundDelay_timeout():
 	get_tree().paused = false
