@@ -45,13 +45,15 @@ func _handle_ball_collisions(wall_collided):
 func _check_score():
 	var winner
 	# fazer sinal com o parametro de quem ganha o jogo para o hud atualizar a label winner
-	var finish = 2
+	var finish = 1
 	if(Globals.enemy_score >= finish):
 		winner = "Enemy"
 		end_game = true
 	elif(Globals.player_score >= finish):
 		winner = "Player"
 		end_game = true
+	else:
+		return
 	
 	emit_signal("winner_signal", winner)
 
