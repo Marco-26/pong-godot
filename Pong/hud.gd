@@ -8,8 +8,6 @@ onready var enemy_win = $enemy_win
 onready var end_popup = $WindowDialog
 onready var end_popup_text = $WindowDialog/LineEdit
 
-#export var main_menu_scene : PackedScene
-
 
 var level_node = null
 
@@ -37,13 +35,11 @@ func _handle_score(score_goes_to):
 func _handle_winner(winner):
 	end_popup.visible = true
 	if winner == "Player":
-		player_win.text = winner + "wins"
 		end_popup_text.text = winner + " Wins"
 	elif winner == "Enemy":
-		enemy_win.text = winner + " wins"
 		end_popup_text.text = winner + " Wins"
-
 
 func _on_WindowDialog_confirmed():
 	#get_tree().change_scene_to(main_menu_scene)
+	print("clicked")
 	pass

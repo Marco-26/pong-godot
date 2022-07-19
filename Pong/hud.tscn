@@ -7,9 +7,6 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="player_score" type="Label" parent="."]
 margin_left = 80.0
@@ -41,30 +38,6 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 2, 700 )
 
-[node name="enemy_win" type="Label" parent="."]
-margin_left = 525.0
-margin_top = 8.0
-margin_right = 607.0
-margin_bottom = 22.0
-valign = 1
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="player_win" type="Label" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -100.0
-margin_top = 8.0
-margin_right = -15.0
-margin_bottom = 22.0
-valign = 1
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="WindowDialog" type="AcceptDialog" parent="."]
 margin_left = 377.0
 margin_top = 227.0
@@ -76,10 +49,13 @@ __meta__ = {
 }
 
 [node name="LineEdit" type="LineEdit" parent="WindowDialog"]
-margin_right = 270.0
-margin_bottom = 113.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 262.0
+margin_bottom = 110.0
 text = "dsaasdasd"
 align = 1
+editable = false
 __meta__ = {
 "_edit_use_anchors_": false
 }

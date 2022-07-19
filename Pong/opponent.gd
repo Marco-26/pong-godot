@@ -11,7 +11,7 @@ func _ready():
 	ball = get_parent().find_node("Ball")
 
 func _physics_process(delta):
-	if ball.position.x < width.x:
+	if ball.position.x < width.x or Globals.end_game:
 		return
 	
 	move_and_collide(Vector2(0,_get_ball_position()*speed))
