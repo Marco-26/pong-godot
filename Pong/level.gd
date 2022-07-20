@@ -18,10 +18,10 @@ func _ready():
 	world_borders = find_node("Border",true,false)
 	world_borders.connect("ball_collided", self, "_handle_ball_collisions")
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("reset"):
 		get_tree().reload_current_scene()
-		
+
 func _handle_ball_collisions(wall_collided):
 	var wall = wall_collided
 	match wall:
@@ -33,29 +33,37 @@ func _handle_ball_collisions(wall_collided):
 			score_goes_to = score_options.player
 			Globals.player_score+=1
 			continue
-	_check_score()
 	emit_signal("change_score", score_goes_to)
+	
+	_check_score()
+	
+	if Globals.end_game:
+		_restart_game()
+		return
+	
 	yield(get_tree().create_timer(2), "timeout")
 	
 	if Globals.end_game == false:
+		print("OI")
 		get_tree().reload_current_scene()
-	else:
-		_restart_game()
 
 func _check_score():
 	var winner
-	# fazer sinal com o parametro de quem ganha o jogo para o hud atualizar a label winner
-	var finish = 1
+	var final_score
+	var finish = 3
+	
 	if(Globals.enemy_score >= finish):
 		winner = "Enemy"
+		final_score = Globals.enemy_score
 		Globals.end_game = true
 	elif(Globals.player_score >= finish):
 		winner = "Player"
+		final_score = Globals.player_score
 		Globals.end_game = true
 	else:
 		return
 	
-	emit_signal("winner_signal", winner)
+	emit_signal("winner_signal", winner,final_score)
 
 func _restart_game():
 	Globals.enemy_score = 0

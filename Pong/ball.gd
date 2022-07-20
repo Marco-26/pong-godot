@@ -13,7 +13,7 @@ func _get_random_direction():
 	direction.y = [-0.8,0.8][randi()%2]
 	return direction
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var collision = move_and_collide(direction * speed)
 	if collision != null:
 		direction = direction.bounce(collision.normal)

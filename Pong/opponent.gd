@@ -10,7 +10,7 @@ func _ready():
 	width.x = get_viewport_rect().size.x/2
 	ball = get_parent().find_node("Ball")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if ball.position.x < width.x or Globals.end_game:
 		return
 	

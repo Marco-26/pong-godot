@@ -12,7 +12,7 @@ func _ready():
 	self.position.y = height/2
 	self.position.x = 30
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if ball.position.x < width/2:
 		_aply_movement()
 

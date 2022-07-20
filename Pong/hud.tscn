@@ -26,9 +26,6 @@ margin_bottom = 42.0
 text = "0"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MiddleLine" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.196078 )
@@ -43,21 +40,17 @@ margin_left = 377.0
 margin_top = 227.0
 margin_right = 647.0
 margin_bottom = 373.0
+mouse_filter = 2
 window_title = "Game ended"
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="LineEdit" type="LineEdit" parent="WindowDialog"]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 262.0
-margin_bottom = 110.0
-text = "dsaasdasd"
+[node name="Label2" type="Label" parent="WindowDialog"]
+margin_right = 270.0
+margin_bottom = 118.0
+text = "ddssdsd"
 align = 1
-editable = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
+valign = 1
 
 [connection signal="confirmed" from="WindowDialog" to="." method="_on_WindowDialog_confirmed"]

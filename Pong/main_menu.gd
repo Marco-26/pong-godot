@@ -1,9 +1,10 @@
 extends Control
 
-export var scene : PackedScene
+export var level = "res://level.tscn"
 
 func _on_Play_pressed():
-	get_tree().change_scene_to(scene)
+	print(Globals.enemy_score)
+	get_tree().change_scene(level)
 
 func _on_Quit_pressed():
 	get_tree().quit()
